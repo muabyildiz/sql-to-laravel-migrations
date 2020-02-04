@@ -34,6 +34,7 @@ if ($mysqli->connect_errno) {
     printf("Connect failed: %s\n", $mysqli->connect_error);
     exit();
 }
+$mysqli->set_charset("utf8");
 
 $query = (sprintf("select TABLE_SCHEMA, TABLE_NAME, TABLE_TYPE, TABLE_COMMENT from `information_schema`.`tables` where TABLE_SCHEMA = '%s';", ($database)));
 
